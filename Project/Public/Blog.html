@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Blog | My Website</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <div class="nav-logo">My Website</div>
+      <div class="nav-links">
+        <a href="/home" class="nav-home">Home</a>
+        <a href="/blog" class="nav-blog">Blog</a>
+        <a href="/about" class="nav-about">About</a>
+        <a href="/contact" class="nav-contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="container">
+      <h1 class="page-heading">Blog</h1>
+      <p class="page-sub">
+        Yahan tum apne thoughts, learning journey, ya daily notes share kar sakte ho.
+      </p>
+
+      <div class="blog-grid">
+        <article class="blog-card">
+          <div class="blog-meta">#01 · Getting Started</div>
+          <h2 class="blog-title">Mera pehla Node.js server</h2>
+          <p class="blog-desc">
+            Kaise maine simple HTTP server bana ke usme multi-page website connect ki.
+          </p>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-meta">#02 · Frontend</div>
+          <h2 class="blog-title">Clean UI kyun important hai?</h2>
+          <p class="blog-desc">
+            Simple design = fast understanding. User ko bina confuse kiye experience dena hi goal hai.
+          </p>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-meta">#03 · Next Steps</div>
+          <h2 class="blog-title">Isko future me kaise upgrade karun?</h2>
+          <p class="blog-desc">
+            Future me isko Express, template engine, ya React se aur powerful bana sakte ho.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © 2025 My Website · All rights reserved
+  </footer>
+
+  <script>
+    document.querySelector('.nav-blog')?.classList.add('active');
+  </script>
+</body>
+</html>
