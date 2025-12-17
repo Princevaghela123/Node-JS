@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Task</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .edit-form {
+            margin-top: 20px;
+        }
+        .edit-input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .save-btn, .cancel-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .save-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .cancel-btn {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Edit Task</h1>
+    
+    <form action="/update/<%= task.id %>" method="POST" class="edit-form">
+        <input 
+            type="text" 
+            name="task" 
+            class="edit-input" 
+            value="<%= task.text %>" 
+            required
+        >
+        <div>
+            <button type="submit" class="save-btn">Save Changes</button>
+            <a href="/" class="cancel-btn">Cancel</a>
+        </div>
+    </form>
+</body>
+</html>
