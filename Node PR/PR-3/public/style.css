@@ -1,0 +1,204 @@
+:root{
+  --theam-color:#18d26e;
+  --bg-color:#060606a0;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+  font-family: 'Raleway';
+}
+a{
+  text-decoration: none;
+  display: inline-block;
+
+}
+li{
+  list-style: none;
+}
+.py{
+  padding: 100px 0;
+}
+html{
+  scroll-behavior: smooth;
+}
+ /* header */
+ .logo a::before{
+  content:'';
+  width: 5px;
+  height: 35px;
+  background-color: var(--theam-color);
+  position: absolute;
+  top: -2px;
+  left:-10px;
+
+ }
+ nav ul li:first-child a{
+  color: var(--theam-color);
+ }
+ .nav-link {
+  padding: 10px 15px;
+  transition: all 0.3s ease-in-out;
+}
+.nav-link:hover {
+  color: var(--theam-color) !important;
+  border-radius: 5px;
+}
+
+/* banner*/
+.slide1 , .slide2 , .slide3 , .slide4 ,.slide5{
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+background-image: url('../images/1.jpg');
+
+}
+.slide2{
+background-image: url('../images/2.jpg');
+}
+.slide3{
+background-image: url('../images/3.jpg');
+}
+.slide4{
+background-image:  url('../images/4.jpg');
+}
+.slide5{
+  background-image: url('../images/5.jpg');
+}
+.slide1 a , .slide2 a , .slide3 a , .slide4 a , .slide5 a , .contact-form a {
+  background-color: var(--theam-color);
+  border-radius: 50px;
+}
+.slide1 p{
+  align-items: start !important;
+}
+.slide1::after , .slide2::after , .slide3::after , .slide4::after , .slide5::after{
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color:rgba(0, 0, 0, 0.763);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* service */
+.services-item i , .about-content ul li i , .facility-item i , .contact-info i {
+  color: var(--theam-color);
+}
+/* counter */
+.count-item h3{
+  color: var(--theam-color) !important;
+}
+.counter{
+  margin-top: 100px;
+}
+/* about */
+.about-title , .facility-title , .portfolio-title , .review-title , .team-title , .pricing-title , .faq-title {
+  margin-bottom: 70px;
+}
+.about-title h2::after, .facility-title h2::after , .portfolio-title h2::after , .review-title h2::after , .team-title h2::after , .pricing-title h2::after , .faq-title h2::after , .contact-title h2::after{
+  content: '';
+  width: 150px;
+  height: 1px;
+  background-color: lightgray;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.about-title h2::before ,  .facility-title h2::before , .portfolio-title h2::before , .review-title h2::before , .team-title h2::before , .pricing-title h2::before , .faq-title h2::before , .contact-title h2::before{
+  content: '';
+  width: 75px;
+  height: 4px;
+  background-color: var(--theam-color);
+  position: absolute;
+  bottom: -11px;
+  left: 50%;
+  z-index: 9;
+  transform: translateX(-50%);
+}
+.about-content a {
+  background-color: var(--theam-color);
+}
+/* action */
+.action{
+  padding: 100px 0;
+  background-image: url('../images/cta-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+/* potfolio */
+.portfolio-overlay{
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background-color: rgba(255, 255, 255, 0.887);
+  transform: translateY(50px);
+  transition: all 0.5s ease-in-out;
+  }
+.portfolio-img:hover .portfolio-overlay{
+   opacity: 1 !important;
+  transform: translateY(0px);
+}
+
+  /* terminal */
+  .termminal .carousel-indicators [data-bs-target]{
+    margin-bottom: -60px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #18d26f55;
+  }
+  .termminal .carousel-indicators .active{
+    background-color: var(--theam-color);
+  }
+
+  /* team  */
+.team .team-overlay{
+  background-color: rgba(0, 0, 0, 0.62);
+  transition: all 0.5s linear;
+}
+.team-overlay ul li a:hover{
+  color: var(--theme-color) !important;
+}
+.team-item:hover .team-overlay{
+  opacity: 1 !important;
+}
+/* pricing  */
+.pricing-item .ri-box-3-line, .pricing-item .ri-send-plane-line , .pricing-item .ri-rocket-line{
+  width: 50px;
+  height: 50px;
+  background-color: var(--theam-color);
+  box-shadow: #18d26f74 0px 0px 0px 7px, #18d26f60 0px 0px 0px 14px;
+}
+.pricing-item h3{
+  color: var(--theme-color);
+}
+.pricing .col-lg-4:nth-child(2) .pricing-item{
+  transform: scale(1.2);
+  border-color: var(--theam-color) !important;
+}
+/* faq  */
+.accordion-button:not(.collapsed){
+  background-color: transparent;
+}
+.accordion-button:focus{
+  box-shadow: none;
+  color: var(--theam-color);
+}
+
+ 
+.footer a:hover {
+  text-decoration: underline;
+}
+.footer .input-group a{
+  background-color: var(--theam-color);
+}
+.top{
+  width: 50px;
+  height: 50px;
+  background-color: var(--theam-color);
+}

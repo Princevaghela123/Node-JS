@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BizPage</title>
+    <!-- remixicon -->
+    <link rel="stylesheet" href="remixicon/remixicon.css">
+    <!-- ralway -->
+    <link rel="stylesheet" href="fonts/raleway/stylesheet.css">
+    <!-- roboto family font -->
+    <link rel="stylesheet" href="fonts/Roboto/stylesheet.css">
+    <!-- bootstrap css-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- main css file -->
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body>
+    <style>
+        :root {
+            --theam-color: #18d26e;
+            --bg-color: #060606a0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Raleway';
+        }
+
+        a {
+            text-decoration: none;
+            display: inline-block;
+
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .py {
+            padding: 100px 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* header */
+        .logo a::before {
+            content: '';
+            width: 5px;
+            height: 35px;
+            background-color: var(--theam-color);
+            position: absolute;
+            top: -2px;
+            left: -10px;
+
+        }
+
+        nav ul li:first-child a {
+            color: var(--theam-color);
+        }
+
+        .nav-link {
+            padding: 10px 15px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .nav-link:hover {
+            color: var(--theam-color) !important;
+            border-radius: 5px;
+        }
+
+        /* banner*/
+        .slide1,
+        .slide2,
+        .slide3,
+        .slide4,
+        .slide5 {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url('../images/1.jpg');
+
+        }
+
+        .slide2 {
+            background-image: url('../images/2.jpg');
+        }
+
+        .slide3 {
+            background-image: url('../images/3.jpg');
+        }
+
+        .slide4 {
+            background-image: url('../images/4.jpg');
+        }
+
+        .slide5 {
+            background-image: url('../images/5.jpg');
+        }
+
+        .slide1 a,
+        .slide2 a,
+        .slide3 a,
+        .slide4 a,
+        .slide5 a,
+        .contact-form a {
+            background-color: var(--theam-color);
+            border-radius: 50px;
+        }
+
+        .slide1 p {
+            align-items: start !important;
+        }
+
+        .slide1::after,
+        .slide2::after,
+        .slide3::after,
+        .slide4::after,
+        .slide5::after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.763);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* service */
+        .services-item i,
+        .about-content ul li i,
+        .facility-item i,
+        .contact-info i {
+            color: var(--theam-color);
+        }
+
+        /* counter */
+        .count-item h3 {
+            color: var(--theam-color) !important;
+        }
+
+        .counter {
+            margin-top: 100px;
+        }
+
+        /* about */
+        .about-title,
+        .facility-title,
+        .portfolio-title,
+        .review-title,
+        .team-title,
+        .pricing-title,
+        .faq-title {
+            margin-bottom: 70px;
+        }
+
+        .about-title h2::after,
+        .facility-title h2::after,
+        .portfolio-title h2::after,
+        .review-title h2::after,
+        .team-title h2::after,
+        .pricing-title h2::after,
+        .faq-title h2::after,
+        .contact-title h2::after {
+            content: '';
+            width: 150px;
+            height: 1px;
+            background-color: lightgray;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .about-title h2::before,
+        .facility-title h2::before,
+        .portfolio-title h2::before,
+        .review-title h2::before,
+        .team-title h2::before,
+        .pricing-title h2::before,
+        .faq-title h2::before,
+        .contact-title h2::before {
+            content: '';
+            width: 75px;
+            height: 4px;
+            background-color: var(--theam-color);
+            position: absolute;
+            bottom: -11px;
+            left: 50%;
+            z-index: 9;
+            transform: translateX(-50%);
+        }
+
+        .about-content a {
+            background-color: var(--theam-color);
+        }
+
+        /* action */
+        .action {
+            padding: 100px 0;
+            background-image: url('../images/cta-bg.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        /* potfolio */
+        .portfolio-overlay {
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background-color: rgba(255, 255, 255, 0.887);
+            transform: translateY(50px);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .portfolio-img:hover .portfolio-overlay {
+            opacity: 1 !important;
+            transform: translateY(0px);
+        }
+
+        /* terminal */
+        .termminal .carousel-indicators [data-bs-target] {
+            margin-bottom: -60px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #18d26f55;
+        }
+
+        .termminal .carousel-indicators .active {
+            background-color: var(--theam-color);
+        }
+
+        /* team  */
+        .team .team-overlay {
+            background-color: rgba(0, 0, 0, 0.62);
+            transition: all 0.5s linear;
+        }
+
+        .team-overlay ul li a:hover {
+            color: var(--theme-color) !important;
+        }
+
+        .team-item:hover .team-overlay {
+            opacity: 1 !important;
+        }
+
+        /* pricing  */
+        .pricing-item .ri-box-3-line,
+        .pricing-item .ri-send-plane-line,
+        .pricing-item .ri-rocket-line {
+            width: 50px;
+            height: 50px;
+            background-color: var(--theam-color);
+            box-shadow: #18d26f74 0px 0px 0px 7px, #18d26f60 0px 0px 0px 14px;
+        }
+
+        .pricing-item h3 {
+            color: var(--theme-color);
+        }
+
+        .pricing .col-lg-4:nth-child(2) .pricing-item {
+            transform: scale(1.2);
+            border-color: var(--theam-color) !important;
+        }
+
+        /* faq  */
+        .accordion-button:not(.collapsed) {
+            background-color: transparent;
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+            color: var(--theam-color);
+        }
+
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer .input-group a {
+            background-color: var(--theam-color);
+        }
+
+        .top {
+            width: 50px;
+            height: 50px;
+            background-color: var(--theam-color);
+        }
+    </style>
+
+    <!-- header -->
+
+    <header class="navbar navbar-expand-lg position-absolute z-3 w-100 ">
+        <div class="container">
+            <div class="logo">
+                <a href="javascript:void(0)" class=" fw-bolder position-relative text-white fs-5">BizPage</a>
+            </div>
+            <a class="navbar-toggler " data-bs-toggle="collapse" data-bs-target="#menu">
+                <i class="ri-menu-line text-white fs-4"></i>
+            </a>
+
+            <nav class="navbar-collapse collapse  mx-4" id="menu">
+                <ul class="navbar-nav ms-auto ">
+                    <li class="bg-lg-danger"><a href="javascript:void(0)" class="nav-link mx-1 ">Home</a></li>
+                    <li><a href="javascript:void(0)" class="nav-link mx-1 text-white">About</a></li>
+                    <li><a href="javascript:void(0)" class="nav-link mx-1 text-white">Services</a></li>
+                    <li><a href="javascript:void(0)" class="nav-link mx-1 text-white">Portfolio</a></li>
+                    <li><a href="javascript:void(0)" class="nav-link mx-1 text-white">Team</a></li>
+                    <li><a href="javascript:void(0)" class="nav-link mx-1 text-white">Blog</a></li>
+                    <li><a href="javascript:void(0)" class="nav-link mx-1 text-white">Contect</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+        <!-- Banner -->
+        <section class="position-relative">
+            <div class="carousel slide carousel-fade" id="slider" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <a href="javascript:void(0)" data-bs-toggle="carousel" data-bs-target="#slider" data-bs-slide-to="0"
+                        class="active"></a>
+                    <a href="javascript:void(0)" data-bs-toggle="carousel" data-bs-target="#slider"
+                        data-bs-slide-to="1"></a>
+                    <a href="javascript:void(0)" data-bs-toggle="carousel" data-bs-target="#slider"
+                        data-bs-slide-to="2"></a>
+                    <a href="javascript:void(0)" data-bs-toggle="carousel" data-bs-target="#slider"
+                        data-bs-slide-to="3"></a>
+                    <a href="javascript:void(0)" data-bs-toggle="carousel" data-bs-target="#slider"
+                        data-bs-slide-to="4"></a>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="slide1 w-100 vh-100 d-flex align-items-center justify-content-center text-center">
+                            <div class="text-white z-3">
+                                <h1 class="display-3 fw-bolder">We are professional</h1>
+                                <p class="fs-5 my-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. <br> Ut enim ad minim
+                                    veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                    consequat.</p>
+                                <a href="javascript:void(0)" class="btn btn-lg px-5 ">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item ">
+                        <div class="slide2 w-100 vh-100 d-flex align-items-center justify-content-center text-center">
+                            <div class="text-white z-3">
+                                <h1 class="display-3 fw-bolder">At vero eos et accusamus</h1>
+                                <p class="fs-5 my-4">Nam libero tempore, cum soluta nobis est eligendi optio cumque
+                                    nihil impedit quo minus id quod maxime placeat <br> facere possimus, omnis voluptas
+                                    assumenda est, omnis dolor repellendus. Temporibus autem <br> quibusdam et aut
+                                    officiis debitis aut.</p>
+                                <a href="javascript:void(0)" class="btn btn-lg px-5 ">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item ">
+                        <div class="slide3 w-100 vh-100 d-flex align-items-center justify-content-center text-center">
+                            <div class="text-white z-3 ">
+                                <h1 class="display-3 fw-bolder">Temporibus autem quibusdam</h1>
+                                <p class="fs-5 my-4">Beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
+                                    voluptas sit aspernatur aut odit aut fugit, sed <br> quia consequuntur magni dolores
+                                    eos qui ratione voluptatem sequi nesciunt omnis iste natus error sit voluptatem <br>
+                                    accusantium.</p>
+                                <a href="javascript:void(0)" class="btn btn-lg px-5 ">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item ">
+                        <div class="slide4 w-100 vh-100 d-flex align-items-center justify-content-center text-center">
+                            <div class="text-white z-3">
+                                <h1 class="display-3 fw-bolder">Nam libero tempore</h1>
+                                <p class="fs-5 my-4">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+                                    consectetur, adipisci velit, sed quia non numquam <br> eius modi tempora incidunt ut
+                                    labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
+                                    <br> nostrum.
+                                </p>
+                                <a href="javascript:void(0)" class="btn btn-lg px-5 ">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item ">
+                        <div class="slide5 w-100 vh-100 d-flex align-items-center justify-content-center text-center">
+                            <div class="text-white z-3">
+                                <h1 class="display-3 fw-bolder">Magnam aliquam quaerat</h1>
+                                <p class="fs-5 my-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna <br> aliqua. Ut enim ad minim
+                                    veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                    consequat.</p>
+                                <a href="javascript:void(0)" class="btn btn-lg px-5 ">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="javascript:void(0)" class="carousel-control-prev" data-bs-toggle="carousel"
+                        data-bs-target="#slider" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a href="javascript:void(0)" class="carousel-control-next" data-bs-toggle="carousel"
+                        data-bs-target="#slider" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- services -->
+        <section class="services bg-dark py">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-lg-4">
+                        <div class="services-item px-3 d-flex">
+                            <i class="ri-briefcase-line display-4"></i>
+                            <div class="services-content text-white ms-4">
+                                <h4 class="fw-bolder">web Development</h4>
+                                <p>oluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
+                                    occaecati cupiditate non provident</p>
+                                <a href="javascript:void(0)" class="text-dark-emphasis">Learn More<i
+                                        class="ri-arrow-right-line ms-3 text-dark-emphasis"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="services-item px-3 d-flex">
+                            <i class="ri-exchange-dollar-line display-4"></i>
+                            <div class="services-content text-white ms-4">
+                                <h4 class="fw-bolder">Dolor Sitema</h4>
+                                <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                    consequat tarad limino ata</p>
+                                <a href="javascript:void(0)" class="text-dark-emphasis">Learn More<i
+                                        class="ri-arrow-right-line ms-3 text-dark-emphasis"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="services-item px-3 d-flex">
+                            <i class="ri-bar-chart-2-line display-4"></i>
+                            <div class="services-content text-white ms-4">
+                                <h4 class="fw-bolder">Sed ut perspiciatis</h4>
+                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                    fugiat nulla pariatur</P>
+                                <a href="javascript:void(0)" class="text-dark-emphasis">Learn More<i
+                                        class="ri-arrow-right-line ms-3 text-dark-emphasis"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="py">
+            <div class="container">
+
+                <div class="about-title text-center">
+                    <h2 class="fw-bolder position-relative">About Us</h2>
+                    <p class="text-body-secondary fs-5 mt-4">Necessitatibus eius consequatur ex aliquid fuga eum quidem
+                        sint consectetur velit</p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="about-content me-4">
+                            <h6 class="text-black-50">Who We Are</h6>
+                            <h3 class="fw-semibold mt-3 fs-2">Unleashing Potential with Creative Strategy</h3>
+                            <p class="fst-italic text-body-secondary my-3">Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna ali</p>
+                            <ul class="ps-0 text-body-secondary my-4">
+                                <li class="mb-2"><i class="ri-checkbox-circle-line fs-5 me-2"></i> Ullamco laboris nisi
+                                    ut aliquip ex ea commodo consequat.</1i>
+                                <li class="mb-2"><i class="ri-checkbox-circle-line fs-5 me-2"></i>Duis aute irure dolor
+                                    in reprehenderit in voluptate velit.</li>
+                                <li class="mb-2"><i class="ri-checkbox-circle-line fs-5 me-2"></i>Ullamco laboris nisi
+                                    ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in</li>
+                            </ul>
+                            <a href="javascript:void(0)" class="text-white py-3 rounded-3 fs-5 px-4">Read More<i
+                                    class="ri-arrow-right-line ms-3"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="about-img">
+                                    <img src="images/a1.jpg" alt="" class="img-fluid rounded-4">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="about-img">
+                                    <img src="images/a2.jpg" alt="" class="img-fluid rounded-4">
+                                </div>
+                                <div class="about-img mt-4">
+                                    <img src="images/a3.jpg" alt="" class="img-fluid rounded-4">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section>
+
+                <!-- counter-->
+                <section class=" counter bg-body-tertiary py">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="count-item text-center">
+                                    <h3 class="display-5 fw-bolder">232</h3>
+                                    <p class="text-body-secondary">Clients</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="count-item text-center">
+                                    <h3 class="display-5 fw-bolder">521</h3>
+                                    <p class="text-body-secondary">Projects</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="count-item text-center">
+                                    <h3 class="display-5 fw-bolder">1453</h3>
+                                    <p class="text-body-secondary">Hours of support</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="count-item text-center">
+                                    <h3 class="display-5 fw-bolder">32</h3>
+                                    <p class="text-body-secondary">Workers</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- facility -->
+                <section class="facility py">
+                    <div class="container">
+                        <div class="facility-title text-center">
+                            <h2 class="fw-bolder position-relative">Services</h2>
+                            <p class="text-body-secondary fs-5 mt-4">Necessitatibus eius consequatur ex aliquid fuga eum
+                                quidem sint consectetur velit</p>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="facility-item mb-4 d-flex border p-4">
+                                    <i class="ri-briefcase-line display-4"></i>
+                                    <div class="facility-content ms-4">
+                                        <h4 class="fw-semibold">Web Development</h4>
+                                        <p class="text-body-secondary mt-3">Voluptatum deleniti atque corrupti quos
+                                            dolores et quas molestias excepturi sint occaecati cupiditate</p>
+                                    </div>
+                                </div>
+                                <div class="facility-item mb-4 d-flex border p-4">
+                                    <i class="ri-bar-chart-2-line display-4"></i>
+                                    <div class="facility-content ms-4">
+                                        <h4 class="fw-semibold">Sed ut perspiciatis</h4>
+                                        <p class="text-body-secondary mt-3">Duis aute irure dolor in reprehenderit in
+                                            voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                                    </div>
+                                </div>
+                                <div class="facility-item mb-4 d-flex border p-4">
+                                    <i class="ri-sun-line display-4"></i>
+                                    <div class="facility-content ms-4">
+                                        <h4 class="fw-semibold">Nemo Enim</h4>
+                                        <p class="text-body-secondary mt-3">At vero eos et accusamus et iusto odio
+                                            dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="facility-item mb-4 d-flex border p-4">
+                                    <i class="ri-exchange-dollar-line display-4"></i>
+                                    <div class="facility-content ms-4">
+                                        <h4 class="fw-semibold">Dolor Sitema</h4>
+                                        <p class="text-body-secondary mt-3">Minim veniam, quis nostrud exercitation
+                                            ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+                                    </div>
+                                </div>
+                                <div class="facility-item mb-4 d-flex border p-4">
+                                    <i class="ri-glasses-2-line display-4"></i>
+                                    <div class="facility-content ms-4">
+                                        <h4 class="fw-semibold">Magni Dolores</h4>
+                                        <p class="text-body-secondary mt-3">Excepteur sint occaecat cupidatat non
+                                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                                    </div>
+                                </div>
+                                <div class="facility-item mb-4 d-flex border p-4">
+                                    <i class="ri-calendar-2-line display-4"></i>
+                                    <div class="facility-content ms-4">
+                                        <h4 class="fw-semibold">Eiusmod Tempor</h4>
+                                        <p class="text-body-secondary mt-3">Et harum quidem rerum facilis est et
+                                            expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- action -->
+                <section class="action w-100 d-flex align-items-center justify-content-center text-center">
+                    <div class="action-content text-white">
+                        <h3 class="fw-bolder">Call To Action</h3>
+                        <p class="my-3 fs-5">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                            dolore eu fugiat nulla pariatur. Excepteur sint <br> occaecat cupidatat non proident, sunt
+                            in culpa qui officia deserunt llit en</p>
+                        <a href="javascript:void(0)"
+                            class="text-white border border-3 border-white py-3 px-5 rounded">Call To Action</a>
+                    </div>
+                </section>
+
+                <!-- portfolio-->
+                <section class="py portfolio">
+                    <div class="container">
+                        <div class="portfolio-title text-center">
+                            <h2 class="fw-bolder position-relative">Portfolio</h2>
+                            <p class="text-body-secondary fs-5 mt-4">Necessitatibus eius consequatur ex aliquid fuga eum
+                                quidem sint consectetur velit</p>
+                            <ul class="nav justify-content-center mt-5 nav-pills">
+                                <li><a href="javascript:void(0)" data-bs-toggle="tab" data-bs-target="#all"
+                                        class="nav-link text-secondary-emphasis fs-6">All</a></li>
+                                <li><a href="javascript:void(0)" data-bs-toggle="tab" data-bs-target="#app"
+                                        class="nav-link text-secondary-emphasis fs-6">App</a></1i>
+                                <li><a href="javascript:void(0)" data-bs-toggle="tab" data-bs-target="#pro"
+                                        class="nav-link text-secondary-emphasis fs-6">Product</a></li>
+                                <li><a href="javascript:void(0)" data-bs-toggle="tab" data-bs-target="#brand"
+                                        class="nav-link text-secondary-emphasis fs-6">Branding</a></li>
+                                <li><a href="javascript:void(0)" data-bs-toggle="tab" data-bs-target="#book"
+                                        class="nav-link text-secondary-emphasis fs-6">Book</a></li>
+                            </ul>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-pane active show fade" id="all">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="portfolio-img mb-4 position-relative overflow-hidden">
+                                            <img src="images/app-1.jpg" alt="" class="img-fluid">
+                                            <div
+                                                class="portfolio-overlay d-flex justify-content-between align-items-center position-absolute p-3 opacity-0 ">
+                                                <div class="portfolio-content">
+                                                    <h6 class="text-bolder">App 1</h6>
+                                                    <p class="text-body-secondary mb-0">Lorem ipsum dolor sit amet.</p>
+                                                </div>
+                                                <div class="portfolio-icon">
+                                                    <a href="javascript:void(0)"
+                                                        class="text-body-secondary fs-5 me- 2"><i
+                                                            class="ri-search-line"></i></a>
+                                                    <a href="javascript:void(0)" class="text-body-secondary fs-5"><i
+                                                            class="ri-links-fill"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="portfolio-img mb-4 position-relative overflow-hidden">
+                                            <img src="images/product-1.jpg" alt="" class="img-fluid">
+                                            <div
+                                                class="portfolio-overlay d-flex justify-content-between align-items-center position-absolute p-3 opacity-0">
+                                                <div class="portfolio-content">
+                                                    <h6 class="text-bolder">Product 1</h6>
+                                                    <p class="text-body-secondary mb-0">Lorem ipsum dolor sit amet.</p>
+                                                </div>
+                                                <div class="portfolio-icon">
+                                                    <a href="javascript:void(0)"
+                                                        class="text-body-secondary fs-5 me- 2"><i
+                                                            class="ri-search-line"></i></a>
+                                                    <a href="javascript:void(0)" class="text-body-secondary fs-5"><i
+                                                            class="ri-links-fill"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="portfolio-img mb-4 position-relative overflow-hidden">
+                                            <img src="images/branding-1.jpg" alt="" class="img-fluid">
+                                            <div
+                                                class="portfolio-overlay d-flex justify-content-between align-items-center position-absolute p-3 opacity-0">
+                                                <div class="portfolio-content">
+                                                    <h6 class="text-bolder">Branding 1</h6>
+                                                    <p class="text-body-secondary mb-0">Lorem ipsum dolor sit amet.</p>
+                                                </div>
+                                                <div class="portfolio-icon">
+                                                    <a href="javascript:void(0)"
+                                                        class="text-body-secondary fs-5 me- 2"><i
+                                                            class="ri-search-line"></i></a>
+                                                    <a href="javascript:void(0)" class="text-body-secondary fs-5"><i
+                                                            class="ri-links-fill"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="portfolio-img mb-4 position-relative overflow-hidden">
+                                            <img src="images/books-1.jpg" alt="" class="img-fluid">
+                                            <div
+                                                class="portfolio-overlay d-flex justify-content-between align-items-center position-absolute p-3 opacity-0">
+                                                <div class="portfolio-content">
+                                                    <h6 class="text-bolder">Book 1</h6>
+                                                    <p class="text-body-secondary mb-0">Lorem ipsum dolor sit amet.</p>
+                                                </div>
+                                                <div class="portfolio-icon">
+                                                    <a href="javascript:void(0)"
+                                                        class="text-body-secondary fs-5 me- 2"><i
+                                                            class="ri-search-line"></i></a>
+                                                    <a href="javascript:void(0)" class="text-body-secondary fs-5"><i
+                                                            class="ri-links-fill"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="portfolio-img mb-4 position-relative overflow-hidden">
+                                            <img src="images/app-2.jpg" alt="" class="img-fluid">
+                                            <div
+                                                class="portfolio-overlay d-flex justify-content-between align-items-center position-absolute p-3 opacity-0">
+                                                <div class="portfolio-content">
+                                                    <h6 class="text-bolder">App 2</h6>
+                                                    <p class="text-body-secondary mb-0">Lorem ipsum dolor sit amet.</p>
+                                                </div>
+                                                <div class="portfolio-icon">
+                                                    <a href="javascript:void(0)"
+                                                        class="text-body-secondary fs-5 me- 2"><i
+                                                            class="ri-search-line"></i></a>
+                                                    <a href="javascript:void(0)" class="text-body-secondary fs-5"><i
+                                                            class="ri-links-fill"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="portfolio-img mb-4 position-relative overflow-hidden">
+                                            <img src="images/product-2.jpg" alt="" class="img-fluid">
+                                            <div
+                                                class="portfolio-overlay d-flex justify-content-between align-items-center position-absolute p-3 opacity-0">
+                                                <div class="portfolio-content">
+                                                    <h6 class="text-bolder">Product 2</h6>
+                                                    <p class="text-body-secondary mb-0">Lorem ipsum dolor sit amet.</p>
+                                                </div>
+                                                <div class="portfolio-icon">
+                                                    <a href="javascript:void(0)"
+                                                        class="text-body-secondary fs-5 me- 2"><i
+                                                            class="ri-search-line"></i></a>
+                                                    <a href="javascript:void(0)" class="text-body-secondary fs-5"><i
+                                                            class="ri-links-fill"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="portfolio-img mb-4 position-relative overflow-hidden">
+                                            <img src="images/branding-2.jpg" alt="" class="img-fluid">
+                                            <div
+                                                class="portfolio-overlay d-flex justify-content-between align-items-center position-absolute p-3 opacity-0">
+                                                <div class="portfolio-content">
+                                                    <h6 class="text-bolder">Branding 2</h6>
+                                                    <p class="text-body-secondary mb-0">Lorem ipsum dolor sit amet.</p>
+                                                </div>
+                                                <div class="portfolio-icon">
+                                                    <a href="javascript:void(0)"
+                                                        class="text-body-secondary fs-5 me- 2"><i
+                                                            class="ri-search-line"></i></a>
+                                                    <a href="javascript:void(0)" class="text-body-secondary fs-5"><i
+                                                            class="ri-links-fill"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="portfolio-img mb-4 position-relative overflow-hidden">
+                                            <img src="images/books-2.jpg" alt="" class="img-fluid">
+                                            <div
+                                                class="portfolio-overlay d-flex justify-content-between align-items-center position-absolute p-3 opacity-0">
+                                                <div class="portfolio-content">
+                                                    <h6 class="text-bolder">Book 2</h6>
+                                                    <p class="text-body-secondary mb-0">Lorem ipsum dolor sit amet.</p>
+                                                </div>
+                                                <div class="portfolio-icon">
+                                                    <a href="javascript:void(0)"
+                                                        class="text-body-secondary fs-5 me- 2"><i
+                                                            class="ri-search-line"></i></a>
+                                                    <a href="javascript:void(0)" class="text-body-secondary fs-5"><i
+                                                            class="ri-links-fill"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="portfolio-img mb-4 position-relative overflow-hidden">
+                                            <img src="images/app-3.jpg" alt="" class="img-fluid">
+                                            <div
+                                                class="portfolio-overlay d-flex justify-content-between align-items-center position-absolute p-3 opacity-0">
+                                                <div class="portfolio-content">
+                                                    <h6 class="text-bolder">App 3</h6>
+                                                    <p class="text-body-secondary mb-0">Lorem ipsum dolor sit amet.</p>
+                                                </div>
+                                                <div class="portfolio-icon">
+                                                    <a href="javascript:void(0)"
+                                                        class="text-body-secondary fs-5 me- 2"><i
+                                                            class="ri-search-line"></i></a>
+                                                    <a href="javascript:void(0)" class="text-body-secondary fs-5"><i
+                                                            class="ri-links-fill"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="portfolio-img mb-4 position-relative overflow-hidden">
+                                            <img src="images/product-3.jpg" alt="" class="img-fluid">
+                                            <div
+                                                class="portfolio-overlay d-flex justify-content-between align-items-center position-absolute p-3 opacity-0">
+                                                <div class="portfolio-content">
+                                                    <h6 class="text-bolder">Product 3</h6>
+                                                    <p class="text-body-secondary mb-0">Lorem ipsum dolor sit amet.</p>
+                                                </div>
+                                                <div class="portfolio-icon">
+                                                    <a href="javascript:void(0)"
+                                                        class="text-body-secondary fs-5 me- 2"><i
+                                                            class="ri-search-line"></i></a>
+                                                    <a href="javascript:void(0)" class="text-body-secondary fs-5"><i
+                                                            class="ri-links-fill"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="portfolio-img mb-4 position-relative overflow-hidden">
+                                            <img src="images/branding-3.jpg" alt="" class="img-fluid">
+                                            <div
+                                                class="portfolio-overlay d-flex justify-content-between align-items-center position-absolute p-3 opacity-0">
+                                                <div class="portfolio-content">
+                                                    <h6 class="text-bolder">Branding 3</h6>
+                                                    <p class="text-body-secondary mb-0">Lorem ipsum dolor sit amet.</p>
+                                                </div>
+                                                <div class="portfolio-icon">
+                                                    <a href="javascript:void(0)"
+                                                        class="text-body-secondary fs-5 me- 2"><i
+                                                            class="ri-search-line"></i></a>
+                                                    <a href="javascript:void(0)" class="text-body-secondary fs-5"><i
+                                                            class="ri-links-fill"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="portfolio-img mb-4 position-relative overflow-hidden">
+                                            <img src="images/books-3.jpg" alt="" class="img-fluid">
+                                            <div
+                                                class="portfolio-overlay d-flex justify-content-between align-items-center position-absolute p-3 opacity-0">
+                                                <div class="portfolio-content">
+                                                    <h6 class="text-bolder">Book 3</h6>
+                                                    <p class="text-body-secondary mb-0">Lorem ipsum dolor sit amet.</p>
+                                                </div>
+                                                <div class="portfolio-icon">
+                                                    <a href="javascript:void(0)"
+                                                        class="text-body-secondary fs-5 me- 2"><i
+                                                            class="ri-search-line"></i></a>
+                                                    <a href="javascript:void(0)" class="text-body-secondary fs-5"><i
+                                                            class="ri-links-fill"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="app">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="portfolio-img mb-4 position-relative overflow-hidden">
+                                            <img src="images/app-1.jpg" alt="" class="img-fluid">
+                                            <div
+                                                class="portfolio-overlay d-flex justify-content-between align-items-center position-absolute p-3 opacity-0">
+                                                <div class="portfolio-content">
+                                                    <h6 class="text-bolder">App 1</h6>
+                                                    <p class="text-body-secondary mb-0">Lorem ipsum dolor sit amet.</p>
+                                                </div>
+                                                <div class="portfolio-icon">
+                                                    <a href="javascript:void(0)"
+                                                        class="text-body-secondary fs-5 me- 2"><i
+                                                            class="ri-search-line"></i></a>
+                                                    <a href="javascript:void(0)" class="text-body-secondary fs-5"><i
+                                                            class="ri-links-fill"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="portfolio-img mb-4 position-relative overflow-hidden">
+                                            <img src="images/app-2.jpg" alt="" class="img-fluid">
+                                            <div
+                                                class="portfolio-overlay d-flex justify-content-between align-items-center position-absolute p-3 opacity-0">
+                                                <div class="portfolio-content">
+                                                    <h6 class="text-bolder">App 2</h6>
+                                                    <p class="text-body-secondary mb-0">Lorem ipsum dolor sit amet.</p>
+                                                </div>
+                                                <div class="portfolio-icon">
+                                                    <a href="javascript:void(0)"
+                                                        class="text-body-secondary fs-5 me- 2"><i
+                                                            class="ri-search-line"></i></a>
+                                                    <a href="javascript:void(0)" class="text-body-secondary fs-5"><i
+                                                            class="ri-links-fill"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="portfolio-img mb-4 position-relative overflow-hidden">
+                                            <img src="images/app-3.jpg" alt="" class="img-fluid">
+                                            <div
+                                                class="portfolio-overlay d-flex justify-content-between align-items-center position-absolute p-3 opacity-0">
+                                                <div class="portfolio-content">
+                                                    <h6 class="text-bolder">App 3</h6>
+                                                    <p class="text-body-secondary mb-0">Lorem ipsum dolor sit amet.</p>
+                                                </div>
+                                                <div class="portfolio-icon">
+                                                    <a href="javascript:void(0)"
+                                                        class="text-body-secondary fs-5 me- 2"><i
+                                                            class="ri-search-line"></i></a>
+                                                    <a href="javascript:void(0)" class="text-body-secondary fs-5"><i
+                                                            class="ri-links-fill"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="pro">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="portfolio-img mb-4 position-relative overflow-hidden">
+                                            <img src="images/product-1.jpg" alt="" class="img-fluid">
+                                            <div
+                                                class="portfolio-overlay d-flex justify-content-between align-items-center position-absolute p-3 opacity-0">
+                                                <div class="portfolio-content">
+                                                    <h6 class="text-bolder">Product 1</h6>
+                                                    <p class="text-body-secondary mb-0">Lorem ipsum dolor sit amet.</p>
+                                                </div>
+                                                <div class="portfolio-icon">
+                                                    <a href="javascript:void(0)"
+                                                        class="text-body-secondary fs-5 me- 2"><i
+                                                            class="ri-search-line"></i></a>
+                                                    <a href="javascript:void(0)" class="text-body-secondary fs-5"><i
+                                                            class="ri-links-fill"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="portfolio-img mb-4 position-relative overflow-hidden">
+                                            <img src="images/product-2.jpg" alt="" class="img-fluid">
+                                            <div
+                                                class="portfolio-overlay d-flex justify-content-between align-items-center position-absolute p-3 opacity-0">
+                                                <div class="portfolio-content">
+                                                    <h6 class="text-bolder">Product 2</h6>
+                                                    <p class="text-body-secondary mb-0">Lorem ipsum dolor sit amet.</p>
+                                                </div>
+                                                <div class="portfolio-icon">
+                                                    <a href="javascript:void(0)"
+                                                        class="text-body-secondary fs-5 me- 2"><i
+                                                            class="ri-search-line"></i></a>
+                                                    <a href="javascript:void(0)" class="text-body-secondary fs-5"><i
+                                                            class="ri-links-fill"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="portfolio-img mb-4 position-relative overflow-hidden">
+                                            <img src="images/product-3.jpg" alt="" class="img-fluid">
+                                            <div
+                                                class="portfolio-overlay d-flex justify-content-between align-items-center position-absolute p-3 opacity-0">
+                                                <div class="portfolio-content">
+                                                    <h6 class="text-bolder">Product 3</h6>
+                                                    <p class="text-body-secondary mb-0">Lorem ipsum dolor sit amet.</p>
+                                                </div>
+                                                <div class="portfolio-icon">
+                                                    <a href="javascript:void(0)"
+                                                        class="text-body-secondary fs-5 me- 2"><i
+                                                            class="ri-search-line"></i></a>
+                                                    <a href="javascript:void(0)" class="text-body-secondary fs-5"><i
+                                                            class="ri-links-fill"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="brand">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="portfolio-img mb-4 position-relative overflow-hidden">
+                                            <img src="images/branding-1.jpg" alt="" class="img-fluid">
+                                            <div
+                                                class="portfolio-overlay d-flex justify-content-between align-items-center position-absolute p-3 opacity-0">
+                                                <div class="portfolio-content">
+                                                    <h6 class="text-bolder">Branding 1</h6>
+                                                    <p class="text-body-secondary mb-0">Lorem ipsum dolor sit amet.</p>
+                                                </div>
+                                                <div class="portfolio-icon">
+                                                    <a href="javascript:void(0)"
+                                                        class="text-body-secondary fs-5 me- 2"><i
+                                                            class="ri-search-line"></i></a>
+                                                    <a href="javascript:void(0)" class="text-body-secondary fs-5"><i
+                                                            class="ri-links-fill"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="portfolio-img mb-4 position-relative overflow-hidden">
+                                            <img src="images/branding-2.jpg" alt="" class="img-fluid">
+                                            <div
+                                                class="portfolio-overlay d-flex justify-content-between align-items-center position-absolute p-3 opacity-0">
+                                                <div class="portfolio-content">
+                                                    <h6 class="text-bolder">Branding 2</h6>
+                                                    <p class="text-body-secondary mb-0">Lorem ipsum dolor sit amet.</p>
+                                                </div>
+                                                <div class="portfolio-icon">
+                                                    <a href="javascript:void(0)"
+                                                        class="text-body-secondary fs-5 me- 2"><i
+                                                            class="ri-search-line"></i></a>
+                                                    <a href="javascript:void(0)" class="text-body-secondary fs-5"><i
+                                                            class="ri-links-fill"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="portfolio-img mb-4 position-relative overflow-hidden">
+                                            <img src="images/branding-3.jpg" alt="" class="img-fluid">
+                                            <div
+                                                class="portfolio-overlay d-flex justify-content-between align-items-center position-absolute p-3 opacity-0">
+                                                <div class="portfolio-content">
+                                                    <h6 class="text-bolder">Branding 3</h6>
+                                                    <p class="text-body-secondary mb-0">Lorem ipsum dolor sit amet.</p>
+                                                </div>
+                                                <div class="portfolio-icon">
+                                                    <a href="javascript:void(0)"
+                                                        class="text-body-secondary fs-5 me- 2"><i
+                                                            class="ri-search-line"></i></a>
+                                                    <a href="javascript:void(0)" class="text-body-secondary fs-5"><i
+                                                            class="ri-links-fill"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="book">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="portfolio-img mb-4 position-relative overflow-hidden">
+                                            <img src="images/books-1.jpg" alt="" class="img-fluid">
+                                            <div
+                                                class="portfolio-overlay d-flex justify-content-between align-items-center position-absolute p-3 opacity-0">
+                                                <div class="portfolio-content">
+                                                    <h6 class="text-bolder">Book 1</h6>
+                                                    <p class="text-body-secondary mb-0">Lorem ipsum dolor sit amet.</p>
+                                                </div>
+                                                <div class="portfolio-icon">
+                                                    <a href="javascript:void(0)"
+                                                        class="text-body-secondary fs-5 me- 2"><i
+                                                            class="ri-search-line"></i></a>
+                                                    <a href="javascript:void(0)" class="text-body-secondary fs-5"><i
+                                                            class="ri-links-fill"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="portfolio-img mb-4 position-relative overflow-hidden">
+                                            <img src="images/books-2.jpg" alt="" class="img-fluid">
+                                            <div
+                                                class="portfolio-overlay d-flex justify-content-between align-items-center position-absolute p-3 opacity-0">
+                                                <div class="portfolio-content">
+                                                    <h6 class="text-bolder">Book 2</h6>
+                                                    <p class="text-body-secondary mb-0">Lorem ipsum dolor sit amet.</p>
+                                                </div>
+                                                <div class="portfolio-icon">
+                                                    <a href="javascript:void(0)"
+                                                        class="text-body-secondary fs-5 me- 2"><i
+                                                            class="ri-search-line"></i></a>
+                                                    <a href="javascript:void(0)" class="text-body-secondary fs-5"><i
+                                                            class="ri-links-fill"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="portfolio-img mb-4 position-relative overflow-hidden">
+                                            <img src="images/books-3.jpg" alt="" class="img-fluid">
+                                            <div
+                                                class="portfolio-overlay d-flex justify-content-between align-items-center position-absolute p-3 opacity-0">
+                                                <div class="portfolio-content">
+                                                    <h6 class="text-bolder">Book 3</h6>
+                                                    <p class="text-body-secondary mb-0">Lorem ipsum dolor sit amet.</p>
+                                                </div>
+                                                <div class="portfolio-icon">
+                                                    <a href="javascript:void(0)"
+                                                        class="text-body-secondary fs-5 me- 2"><i
+                                                            class="ri-search-line"></i></a>
+                                                    <a href="javascript:void(0)" class="text-body-secondary fs-5"><i
+                                                            class="ri-links-fill"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- termminal -->
+                <section class="termminal py">
+                    <div class="container">
+                        <div class="facility-title text-center">
+                            <h2 class="fw-bolder position-relative">Testimonials</h2>
+                            <p class="text-body-secondary fs-5 mt-4">Necessitatibus eius consequatur ex aliquid fuga eum
+                                quidem sint consectetur velit</p>
+                        </div>
+                        <div class="carousel slide " id="testimonial-slider" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#testimonial-slider" data-bs-slide-to="0"
+                                    class="active"></button>
+                                <button type="button" data-bs-target="#testimonial-slider"
+                                    data-bs-slide-to="1"></button>
+                                <button type="button" data-bs-target="#testimonial-slider"
+                                    data-bs-slide-to="2"></button>
+                                <button type="button" data-bs-target="#testimonial-slider"
+                                    data-bs-slide-to="3"></button>
+                                <button type="button" data-bs-target="#testimonial-slider"
+                                    data-bs-slide-to="4"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="testimonial-content text-center">
+                                        <img src="images/testimonials-1.jpg" class="img-fluid mb-2 rounded-circle"
+                                            width="120px" alt="testimonial">
+                                        <h4 class="fw-semibold">Saul Goodman</h4>
+                                        <h6>Ceo & Founder</h6>
+                                        <span class="text-warning"><i class="ri-star-s-fill"></i><i
+                                                class="ri-star-s-fill"></i><i class="ri-star-s-fill"></i><i
+                                                class="ri-star-s-fill"></i><i class="ri-star-s-fill"></i></span>
+                                        <p class="m-3"><i class="ri-double-quotes-l me-2 fs-3 text-success"></i>Proin
+                                            iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit
+                                            rhoncus. Accusantium quam, ultricies <br>eget id, aliquam eget nibh et.
+                                            Maecen aliquam, risus at semper.<i
+                                                class="ri-double-quotes-r ms-2 fs-3 text-success"></i></p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="testimonial-content text-center">
+                                        <img src="images/testimonials-2.jpg" class="img-fluid mb-2 rounded-circle"
+                                            width="120px" alt="testimonial">
+                                        <h4 class="fw-semibold">Sara Wilsson</h4>
+                                        <h6>Designer</h6>
+                                        <span class="text-warning"><i class="ri-star-s-fill"></i><i
+                                                class="ri-star-s-fill"></i><i class="ri-star-s-fill"></i><i
+                                                class="ri-star-s-fill"></i><i class="ri-star-s-fill"></i></span>
+                                        <p class="m-3"><i class="ri-double-quotes-l me-2 fs-3 text-success"></i>Export
+                                            tempor illum tamen malis malis eram quae irure esse labore quem cillum quid
+                                            cillum eram malis quorum velit fore <br>eram velit sunt aliqua noster fugiat
+                                            irure amet legam anim culpa.<i
+                                                class="ri-double-quotes-r ms-2 fs-3 text-success"></i></p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="testimonial-content text-center">
+                                        <img src="images/testimonials-3.jpg" class="img-fluid mb-2 rounded-circle"
+                                            width="120px" alt="testimonial">
+                                        <h4 class="fw-semibold">Jena Karlis</h4>
+                                        <h6>Store Owner</h6>
+                                        <span class="text-warning"><i class="ri-star-s-fill"></i><i
+                                                class="ri-star-s-fill"></i><i class="ri-star-s-fill"></i><i
+                                                class="ri-star-s-fill"></i><i class="ri-star-s-fill"></i></span>
+                                        <p class="m-3"><i class="ri-double-quotes-l me-2 fs-3 text-success"></i>Enim
+                                            nisi quem export duis labore cillum quae magna enim sint quorum nulla quem
+                                            veniam duis minim tempor labore quem <br>eram duis noster aute amet eram
+                                            fore quis sint minim.<i
+                                                class="ri-double-quotes-r ms-2 fs-3 text-success"></i></p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="testimonial-content text-center">
+                                        <img src="images/testimonials-4.jpg" class="img-fluid mb-2 rounded-circle"
+                                            width="120px" alt="testimonial">
+                                        <h4 class="fw-semibold">Matt Brandon</h4>
+                                        <h6>Freelancer</h6>
+                                        <span class="text-warning"><i class="ri-star-s-fill"></i><i
+                                                class="ri-star-s-fill"></i><i class="ri-star-s-fill"></i><i
+                                                class="ri-star-s-fill"></i><i class="ri-star-s-fill"></i></span>
+                                        <p class="m-3"><i class="ri-double-quotes-l me-2 fs-3 text-success"></i>Fugiat
+                                            enim eram quae cillum dolore dolor amet nulla culpa multos export minim
+                                            fugiat minim velit minim dolor enim duis <br>veniam ipsum anim magna sunt
+                                            elit fore quem dolore labore illum veniam.<i
+                                                class="ri-double-quotes-r ms-2 fs-3 text-success"></i></p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="testimonial-content text-center">
+                                        <img src="images/testimonials-5.jpg" class="img-fluid mb-2 rounded-circle"
+                                            width="120px" alt="testimonial">
+                                        <h4 class="fw-semibold">John Larson</h4>
+                                        <h6>Entrepreneur</h6>
+                                        <span class="text-warning"><i class="ri-star-s-fill"></i><i
+                                                class="ri-star-s-fill"></i><i class="ri-star-s-fill"></i><i
+                                                class="ri-star-s-fill"></i><i class="ri-star-s-fill"></i></span>
+                                        <p class="m-3"><i class="ri-double-quotes-l me-2 fs-3 text-success"></i>Quis
+                                            quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor
+                                            noster veniam enim culpa labore duis sunt <br>culpa nulla illum cillum
+                                            fugiat legam esse veniam culpa fore nisi cillum quid.<i
+                                                class="ri-double-quotes-r ms-2 fs-3 text-success"></i></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- team  -->
+                <section class="py team">
+                    <div class="container">
+                        <div class="team-title text-center">
+                            <h2 class="fw-bolder position-relative">Team</h2>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="team-item position-relative">
+                                    <img src="images/t1.jpg" alt="" class="img-fluid">
+                                    <div
+                                        class="team-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center  flex-column text-white opacity-0">
+                                        <h4>Walter White</h4>
+                                        <p>Chief Executive Officer</p>
+                                        <ul class="d-flex ps-0">
+                                            <li><a href="javascript:void(0)" class="text-white fs-3 me-2"><i
+                                                        class="ri-twitter-fill"></i></a></li>
+                                            <li><a href="javascript:void(0)" class="text-white fs-3 me-2"><i
+                                                        class="ri-instagram-line"></i></a></li>
+                                            <li><a href="javascript:void(0)" class="text-white fs-3 me-2"><i
+                                                        class="ri-facebook-circle-fill"></i></a></li>
+                                            <li><a href="javascript:void(0)" class="text-white fs-3 me-2"><i
+                                                        class="ri-linkedin-box-fill"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="team-item position-relative">
+                                    <img src="images/t2.jpg" alt="" class="img-fluid">
+                                    <div
+                                        class="team-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center  flex-column text-white opacity-0">
+                                        <h4>Sarah Jhonson</h4>
+                                        <p>Product Manager</p>
+                                        <ul class="d-flex ps-0">
+                                            <li><a href="javascript:void(0)" class="text-white fs-3 me-2"><i
+                                                        class="ri-twitter-fill"></i></a></li>
+                                            <li><a href="javascript:void(0)" class="text-white fs-3 me-2"><i
+                                                        class="ri-instagram-line"></i></a></li>
+                                            <li><a href="javascript:void(0)" class="text-white fs-3 me-2"><i
+                                                        class="ri-facebook-circle-fill"></i></a></li>
+                                            <li><a href="javascript:void(0)" class="text-white fs-3 me-2"><i
+                                                        class="ri-linkedin-box-fill"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="team-item position-relative">
+                                    <img src="images/t3.jpg" alt="" class="img-fluid">
+                                    <div
+                                        class="team-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center  flex-column text-white opacity-0">
+                                        <h4>William Anderson</h4>
+                                        <p>CTO</p>
+                                        <ul class="d-flex ps-0">
+                                            <li><a href="javascript:void(0)" class="text-white fs-3 me-2"><i
+                                                        class="ri-twitter-fill"></i></a></li>
+                                            <li><a href="javascript:void(0)" class="text-white fs-3 me-2"><i
+                                                        class="ri-instagram-line"></i></a></li>
+                                            <li><a href="javascript:void(0)" class="text-white fs-3 me-2"><i
+                                                        class="ri-facebook-circle-fill"></i></a></li>
+                                            <li><a href="javascript:void(0)" class="text-white fs-3 me-2"><i
+                                                        class="ri-linkedin-box-fill"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="team-item position-relative">
+                                    <img src="images/t4.jpg" alt="" class="img-fluid">
+                                    <div
+                                        class="team-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center  flex-column text-white opacity-0">
+                                        <h4>Amanda Jepson</h4>
+                                        <p>Accountant</p>
+                                        <ul class="d-flex ps-0">
+                                            <li><a href="javascript:void(0)" class="text-white fs-3 me-2"><i
+                                                        class="ri-twitter-fill"></i></a></li>
+                                            <li><a href="javascript:void(0)" class="text-white fs-3 me-2"><i
+                                                        class="ri-instagram-line"></i></a></li>
+                                            <li><a href="javascript:void(0)" class="text-white fs-3 me-2"><i
+                                                        class="ri-facebook-circle-fill"></i></a></li>
+                                            <li><a href="javascript:void(0)" class="text-white fs-3 me-2"><i
+                                                        class="ri-linkedin-box-fill"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Pricing  -->
+                <section class="py pricing">
+                    <div class="container">
+                        <div class="pricing-title text-center">
+                            <h2 class="fw-bolder position-relative">Pricing</h2>
+                            <p class="text-body-secondary fs-5 mt-4">Necessitatibus eius consequatur ex aliquid fuga eum
+                                quidem sint consectetur velit</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="pricing-item mt-5 text-center shadow-lg rounded-5 p-5">
+                                    <h5 class="fw-semibold mb-5">Free Plan</h5>
+                                    <i class="ri-box-3-line text-white p-4 rounded-circle fs-3"></i>
+                                    <h3 class="fs-1 my-4">$0 <span class="fs-5 text-body-tertiary">/ month</span></h3>
+                                    <ul class="ps-0 text-start">
+                                        <li class="text-body-secondary mb-3"><i
+                                                class="ri-check-fill text-success fw-bolder me-2 fs-5"></i>Quam
+                                            adipiscing vitae proin</li>
+                                        <li class="text-body-secondary mb-3"><i
+                                                class="ri-check-fill text-success fw-bolder me-2 fs-5"></i>Nec feugiat
+                                            nisl pretium</li>
+                                        <li class="text-body-secondary mb-3"><i
+                                                class="ri-check-fill text-success fw-bolder me-2 fs-5"></i>Nulla at
+                                            volutpat diam uteera</li>
+                                        <li class="text-body-tertiary mb-3"><i
+                                                class="ri-close-fill text-success fw-bolder me-2 fs-5"></i>Pharetra
+                                            massa massa ultricies</li>
+                                        <li class="text-body-tertiary mb-3"><i
+                                                class="ri-close-fill text-success fw-bolder me-2 fs-5"></i>Massa
+                                            ultricies mi quis hendrerit</li>
+                                    </ul>
+                                    <a href="javascript:void(0)"
+                                        class="btn mt-4 border border-light-subtle  text-body-tertiary rounded-pill px-5">Buy
+                                        Now</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div
+                                    class="pricing-item mt-5 text-center shadow-lg rounded-5 p-5 border border-4 bg-white">
+                                    <h5 class="fw-semibold mb-5">Bussiness Plan</h5>
+                                    <i class="ri-rocket-line text-white p-4 rounded-circle fs-3"></i>
+                                    <h3 class="fs-1 my-4">$29 <span class="fs-5 text-body-tertiary">/ month</span></h3>
+                                    <ul class="ps-0 text-start">
+                                        <li class="text-body-secondary mb-3"><i
+                                                class="ri-check-fill text-success fw-bolder me-2 fs-5"></i>Quam
+                                            adipiscing vitae proin</li>
+                                        <li class="text-body-secondary mb-3"><i
+                                                class="ri-check-fill text-success fw-bolder me-2 fs-5"></i>Nec feugiat
+                                            nisl pretium</li>
+                                        <li class="text-body-secondary mb-3"><i
+                                                class="ri-check-fill text-success fw-bolder me-2 fs-5"></i>Nulla at
+                                            volutpat diam uteera</li>
+                                        <li class="text-body-secondary mb-3"><i
+                                                class="ri-check-fill text-success fw-bolder me-2 fs-5"></i>Pharetra
+                                            massa massa ultricies</li>
+                                        <li class="text-body-secondary mb-3"><i
+                                                class="ri-check-fill text-success fw-bolder me-2 fs-5"></i>Massa
+                                            ultricies mi quis hendrerit</li>
+                                    </ul>
+                                    <a href="javascript:void(0)"
+                                        class="btn mt-4 border border-light-subtle  text-body-tertiary rounded-pill px-5">Buy
+                                        Now</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="pricing-item mt-5 text-center shadow-lg rounded-5 p-5">
+                                    <h5 class="fw-semibold mb-5">Devloper Plan</h5>
+                                    <i class="ri-send-plane-line text-white p-4 rounded-circle fs-3"></i>
+                                    <h3 class="fs-1 my-4">$49 <span class="fs-5 text-body-tertiary">/ month</span></h3>
+                                    <ul class="ps-0 text-start">
+                                        <li class="text-body-secondary mb-3"><i
+                                                class="ri-check-fill text-success fw-bolder me-2 fs-5"></i>Quam
+                                            adipiscing vitae proin</li>
+                                        <li class="text-body-secondary mb-3"><i
+                                                class="ri-check-fill text-success fw-bolder me-2 fs-5"></i>Nec feugiat
+                                            nisl pretium</li>
+                                        <li class="text-body-secondary mb-3"><i
+                                                class="ri-check-fill text-success fw-bolder me-2 fs-5"></i>Nulla at
+                                            volutpat diam uteera</li>
+                                        <li class="text-body-secondary mb-3"><i
+                                                class="ri-check-fill text-success fw-bolder me-2 fs-5"></i>Pharetra
+                                            massa massa ultricies</li>
+                                        <li class="text-body-secondary mb-3"><i
+                                                class="ri-check-fill text-success fw-bolder me-2 fs-5"></i>Massa
+                                            ultricies mi quis hendrerit</li>
+                                    </ul>
+                                    <a href="javascript:void(0)"
+                                        class="btn mt-4 border border-light-subtle  text-body-tertiary rounded-pill px-5">Buy
+                                        Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- FAQ  -->
+                <section class="py bg-body-tertiary">
+                    <div class="container">
+                        <div class="faq-title text-center">
+                            <h2 class="fw-bolder position-relative">Frequently Asked Questions</h2>
+                            <p class="text-body-secondary fs-5 mt-4">Necessitatibus eius consequatur ex aliquid fuga eum
+                                quidem sint consectetur velit</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="accordion" id="faq">
+                                    <div class="accordion-item mb-4">
+                                        <div class="accordion-header">
+                                            <a href="javascript:void(0)" class="accordion-button"
+                                                data-bs-toggle="collapse" data-bs-target="#item1">Non consectetur a erat
+                                                nam at lectus urna duis?</a>
+                                        </div>
+                                        <div class="accordion-collapse collapse" id="item1" data-bs-parent="#faq">
+                                            <div class="accordion-body">
+                                                <p>Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat
+                                                    lacus laoreet non curabitur gravida. Venenatis lectus magna
+                                                    fringilla urna porttitor rhoncus dolor purus non.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item mb-4">
+                                        <div class="accordion-header">
+                                            <a href="javascript:void(0)" class="accordion-button"
+                                                data-bs-toggle="collapse" data-bs-target="#item2">Feugiat scelerisque
+                                                varius morbi enim nunc faucibus?</a>
+                                        </div>
+                                        <div class="accordion-collapse collapse" id="item2" data-bs-parent="#faq">
+                                            <div class="accordion-body">
+                                                <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant
+                                                    morbi. Id interdum velit laoreet id donec ultrices. Fringilla
+                                                    phasellus faucibus scelerisque eleifend donec pretium. Est
+                                                    pellentesque elit ullamcorper dignissim. Mauris ultrices eros in
+                                                    cursus turpis massa tincidunt dui.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item mb-4">
+                                        <div class="accordion-header">
+                                            <a href="javascript:void(0)" class="accordion-button"
+                                                data-bs-toggle="collapse" data-bs-target="#item3">Dolor sit amet
+                                                consectetur adipiscing elit pellentesque?</a>
+                                        </div>
+                                        <div class="accordion-collapse collapse" id="item3" data-bs-parent="#faq">
+                                            <div class="accordion-body">
+                                                <p>Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis
+                                                    orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra
+                                                    diam sit amet nisl suscipit. Rutrum tellus pellentesque eu
+                                                    tincidunt. Lectus urna duis convallis convallis tellus. Urna
+                                                    molestie at elementum eu facilisis sed odio morbi quis</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="accordion" id="faq1">
+                                    <div class="accordion-item mb-4">
+                                        <div class="accordion-header">
+                                            <a href="javascript:void(0)" class="accordion-button"
+                                                data-bs-toggle="collapse" data-bs-target="#item4">Ac odio tempor orci
+                                                dapibus. Aliquam eleifend mi in nulla?</a>
+                                        </div>
+                                        <div class="accordion-collapse collapse" id="item4" data-bs-parent="#faq1">
+                                            <div class="accordion-body">
+                                                <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant
+                                                    morbi. Id interdum velit laoreet id donec ultrices. Fringilla
+                                                    phasellus faucibus scelerisque eleifend donec pretium. Est
+                                                    pellentesque elit ullamcorper dignissim. Mauris ultrices eros in
+                                                    cursus turpis massa tincidunt dui.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item mb-4">
+                                        <div class="accordion-header">
+                                            <a href="javascript:void(0)" class="accordion-button"
+                                                data-bs-toggle="collapse" data-bs-target="#item5">Tempus quam
+                                                pellentesque nec nam aliquam sem et tortor?</a>
+                                        </div>
+                                        <div class="accordion-collapse collapse" id="item5" data-bs-parent="#faq1">
+                                            <div class="accordion-body">
+                                                <p>Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim
+                                                    suspendisse in est ante in. Nunc vel risus commodo viverra maecenas
+                                                    accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus
+                                                    gravida quis blandit turpis cursus in</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item mb-4">
+                                        <div class="accordion-header">
+                                            <a href="javascript:void(0)" class="accordion-button"
+                                                data-bs-toggle="collapse" data-bs-target="#item6">Perspiciatis quod quo
+                                                quos nulla quo illum ullam?</a>
+                                        </div>
+                                        <div class="accordion-collapse collapse" id="item6" data-bs-parent="#faq1">
+                                            <div class="accordion-body">
+                                                <p>Enim ea facilis quaerat voluptas quidem et dolorem. Quis et
+                                                    consequatur non sed in suscipit sequi. Distinctio ipsam dolore et.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- contact -->
+                <section class="contact">
+                    <div class="container">
+                        <div class="faq-title text-center">
+                            <h2 class="fw-bolder position-relative">Frequently Asked Questions</h2>
+                            <p class="text-body-secondary fs-5 mt-4">Necessitatibus eius consequatur ex aliquid fuga eum
+                                quidem sint consectetur velit</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 contact-info text-center">
+                                <i class="ri-map-pin-line fs-2 mb-1"></i>
+                                <h5>Address</h5>
+                                <p>A108 Adam Street, New York, NY 535022</p>
+                            </div>
+                            <div class="col-lg-4 contact-info text-center">
+                                <i class="ri-phone-line fs-2 mb-1"></i>
+                                <h5>Call Us</h5>
+                                <p>+1 5589 55488 55</p>
+                            </div>
+                            <div class="col-lg-4 contact-info text-center">
+                                <i class="ri-mail-line fs-2 mb-1"></i>
+                                <h5>Email Us</h5>
+                                <p>info@example.com</p>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="contact-form p-5 shadow mt-5 text-center">
+                                    <form>
+                                        <div class="d-flex">
+                                            <input type="text" class="form-control rounded-0 mb-4 p-3 me-3"
+                                                placeholder="enter your name">
+                                            <input type="email" class="form-control rounded-0 mb-4 p-3 me-3"
+                                                placeholder="enter your name">
+                                        </div>
+                                        <input type="text" class="form-control rounded-0 mb-4 p-3"
+                                            placeholder="subject">
+                                        <textarea rows="5" class="form-control rounded-0 mb-4 p-3"
+                                            placeholder=""></textarea>
+                                        <a href="javascript:void(0)" class="btn btn-lg px-5  ">Get Started</a>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+    </main>
+
+    <!-- footer -->
+    <footer class="footer py bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <h5>BizPage</h5>
+                    <p class="text-secondary">A108 Adam Street<br>New York, NY 535022</p>
+                    <p class="text-secondary"><span class="text-white fw-semibold">Phone:</span> +1 5589 55488 55</p>
+                    <p class="text-secondary"> <span class="text-white fw-semibold">Email:</span> info@example.com</p>
+                </div>
+                <div class="col-lg-3">
+                    <h5>Useful Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="javascript:void(0)" class="text-secondary">Home</a></li>
+                        <li><a href="javascript:void(0)" class="text-secondary">About Us</a></li>
+                        <li><a href="javascript:void(0)" class="text-secondary">Services</a></li>
+                        <li><a href="javascript:void(0)" class="text-secondary">Terms of Service</a></li>
+                        <li><a href="javascript:void(0)" class="text-secondary">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5>Useful Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="javascript:void(0)" class="text-secondary">Home</a></li>
+                        <li><a href="javascript:void(0)" class="text-secondary">About Us</a></li>
+                        <li><a href="javascript:void(0)" class="text-secondary">Services</a></li>
+                        <li><a href="javascript:void(0)" class="text-secondary">Terms of Service</a></li>
+                        <li><a href="javascript:void(0)" class="text-secondary">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5>Our Newsletter</h5>
+                    <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
+                    <div class="input-group">
+                        <input type="text" class="bg-transparent border-white border-opacity-25">
+                        <a href="javascript:void(0)" class="btn">Subscribe</a>
+                    </div>
+                </div>
+            </div>
+            <!-- copyright -->
+            <div class="text-center">
+                <hr>
+                <p>© Copyright <strong>BizPage</strong>. All Rights Reserved <br>Designed by <a
+                        href="https://bootstrapmade.com/">BootstrapMade</a></p>
+            </div>
+        </div>
+    </footer>
+    <div class="top position-fixed bottom-0 end-0 m-3">
+        <a href="#" class="text-white p-2 d-flex justify-content-center align-items-center fs-5 scrol"><i
+                class="ri-arrow-up-line"></i></a>
+    </div>
+
+    <!-- bootsrtap js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
