@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>watch Edit Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="../public/header.css" />
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="#">Casio<span>.</span></a>
+            </div>
+
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#" class="active">New Arrivals</a></li>
+                    <li><a href="#">Men's</a></li>
+                    <li><a href="#">Women's</a></li>
+                    <li><a href="#">Limited Edition</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="icon-btn"><ion-icon name="search-outline"></ion-icon></button>
+                <button class="icon-btn"><ion-icon name="person-outline"></ion-icon></button>
+                <button class="cart-btn">
+                    <ion-icon name="bag-handle-outline"></ion-icon>
+                    <span class="badge">2</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <section class="hero-placeholder"></section>
+
+
+
+    <h1 style="text-align: center;" class="mt-5 text-white">Update Watch</h1>
+
+    <div class="container col-4">
+        <form method="post" action="/updateWatch" enctype="multipart/form-data">
+            <div class="mb-3">
+                <input type="hidden" name="id" value="<%= mywatch.id %>" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label text-white">watch Name</label>
+                <input type="text" name="watch_name" value="<%= mywatch.watch_name %>" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label text-white">watch model</label>
+                <input type="text" name="watch_model" value="<%=mywatch.watch_model %>" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label text-white">watch color</label>
+                <input type="text" name="watch_color" value="<%= mywatch.watch_color %>" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label text-white">watch price</label>
+                <input type="number" name="watch_price" value="<%= mywatch.watch_price %>" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label text-white">Image</label>
+                <!-- <img src="../<%= mywatch.watch_image %>" alt="<%= mywatch.watch_name %>" width="100"> -->
+                <input type="file" name="watch_image" class="form-control">
+            </div>
+
+            <button type="submit" class="btn btn-outline-secondary">Update watch</button>
+        </form>
+
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
