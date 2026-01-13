@@ -147,5 +147,5 @@ app.listen(PORT, (err) => {
         console.log("Server Bandh Che Tara Baap Ne Jo Pela..🤦‍♂️ ", err);
         return;
     }
-    console.log("Server Dadh Dadh Kare che😂🫡");
+    console.log("Have Ker Moj😂🫡");
 });

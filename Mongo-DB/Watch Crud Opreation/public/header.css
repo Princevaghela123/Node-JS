@@ -111,7 +111,7 @@ body {
 
 /* Placeholder for context */
 .hero-placeholder {
-    height: 20vh;
+    height: 100vh;
     background: url('https://www.krishnawatch.com/cdn/shop/collections/casio_1920x.jpg?v=1761655720') no-repeat center center/cover;
 }
 

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Home Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Modern Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Navigation Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 8%;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-right: 30px;
+        }
+
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #007bff;
+        }
+
+        /* Buttons Container */
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        /* Common Button Styles */
+        .btn-base {
+            padding: 12px 24px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        /* View Employee Button (Outline Style) */
+        .view-emp-btn {
+            border: 2px solid #007bff;
+            color: #007bff;
+            background: transparent;
+        }
+
+        .view-emp-btn:hover {
+            background-color: #007bff;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0,123,255,0.2);
+        }
+
+        /* Add Employee Button (Solid Style) */
+        .add-emp-btn {
+            background-color: #007bff;
+            color: white;
+            border: 2px solid #007bff;
+            box-shadow: 0 4px 15px rgba(0,123,255,0.3);
+        }
+
+        .add-emp-btn:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        /* BIG Banner Section */
+        .banner {
+            height: 85vh;
+            background: linear-gradient(45deg, rgba(0,0,0,0.7), rgba(0,123,255,0.3)), 
+                        url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        /* Banner Text Animation */
+        .banner-content h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .banner-content p {
+            font-size: 1.5rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease 0.4s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Badhiya Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 50px 8% 20px;
+            margin-top: auto;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .footer-section p, .footer-section li {
+            color: #bbb;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: #bbb;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 0.8rem;
+            color: #777;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+            </ul>
+        </nav>
+
+        <div class="nav-buttons">
+            <a href="/employee/allEmployeePage" class="btn-base view-emp-btn">View Employees</a>
+            <a href="/employee" class="btn-base add-emp-btn">+ Add Employee</a>
+        </div>
+    </header>
+
+    <div class="banner">
+        <div class="banner-content">
+            <h1>Elevate Your Workflow</h1>
+            <p>The smartest way to manage your team and projects.</p>
+        </div>
+    </div>
+
+    <div style="padding: 100px 8%; text-align: center;">
+        <h2>About Our System</h2>
+        <p style="color: #666; margin-top: 20px;">Ye ek simple aur powerful dashboard hai jahan aap apna sara data manage kar sakte hain.</p>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>We provide the best tools to help you manage your employees efficiently and grow your business faster.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Support Center</a></li>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>Email: support@company.com</p>
+                <p>Phone: +91 98765 43210</p>
+                <p>Location: Surat, Gujarat</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 YourCompany. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
